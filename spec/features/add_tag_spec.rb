@@ -5,6 +5,7 @@ feature 'Allowing the user to add a tag to a post' do
     fill_in 'url', with: 'https://www.google.co.uk'
     fill_in 'tag', with: 'tools'
     click_button 'Create new bookmark!'
-    expect(page).to have_content 'Tags: tools'
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('tools')
   end
 end

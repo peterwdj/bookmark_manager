@@ -5,13 +5,11 @@
 <body>
   <ul id='links'>
     <% @links.each do |link| %>
-      <% if link.tags.map(&:name).include? @filter %> 
         <li>
         Title: <%= link.title %>
         <br>
         url: <%= link.url %>
         </li>
-      <% end %>
     <% end %>
   </ul>
 </body>
